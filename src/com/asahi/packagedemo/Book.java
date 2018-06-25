@@ -24,6 +24,24 @@ public class Book {
 		this.publicationYear = publicationYear;
 	}
 	
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public double getAverageRating() {
+		return averageRating;
+	}
+	public void setAverageRating(double averageRating) {
+		this.averageRating = averageRating;
+	}
+	public int getRatingsCount() {
+		return ratingsCount;
+	}
+	public void setRatingsCount(int ratingsCount) {
+		this.ratingsCount = ratingsCount;
+	}
 	public String getImageUrl() {
 		return imageUrl;
 	}

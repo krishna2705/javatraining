@@ -34,6 +34,9 @@ class CustomPackage {
         APIResponseParser apiRes = new APIResponseParser();
         apiRes.accessApiResponse();
         
+        APIResParse apiResVal = new APIResParse();
+        
+        
         
 	}
 
