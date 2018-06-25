@@ -25,7 +25,6 @@ public class Order implements IOrder {
 		
 		//Add the product price based on Qty in Cart page
 		p.setAmount( p.getProductQty() * p.getAmount());
-		p.setProductQty(p.getProductQty()+p.getProductQty());
 		map.put(p.getProductId(), p );
 		return false;
 	}//addProduct
@@ -33,8 +32,9 @@ public class Order implements IOrder {
 	public boolean addQtyToProduct(String pid, int pQty) {
 		if(map.containsKey(pid)){
 			Product p1 = (Product) map.get(pid);
-			p1.setAmount((double) pQty * p1.getAmount());
-			p1.setProductQty(pQty);
+			int qty = ( p1.getProductQty() == 1 ) ? pQty : p1.getProductQty() + pQty ;
+			p1.setProductQty(qty);
+			p1.setAmount( p1.getProductQty() * p1.getDefaultAmt());
 		}
 		return true;
 	}

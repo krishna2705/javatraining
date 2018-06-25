@@ -9,7 +9,7 @@ public class Product {
 	private int productQty;
 	private double amount;
 	private static int DEFAULT_QTY = 1; 
-	
+	private double defaultAmt;
 	
 	public Product(){}
 	
@@ -21,6 +21,7 @@ public class Product {
 		this.productImage = pimage;
 		this.productQty = DEFAULT_QTY;
 		this.amount = price;
+		this.defaultAmt = price;
 	}
 	
 	
@@ -65,6 +66,12 @@ public class Product {
 	}
 	public void setAmount(double amount) {
 		this.amount = amount;
+	}
+	public double getDefaultAmt() {
+	   return defaultAmt;
+	}
+	public void setDefaultAmt(double defaultAmt) {
+	   this.defaultAmt = defaultAmt;
 	}
 	
 }

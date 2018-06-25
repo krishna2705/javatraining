@@ -1,40 +1,44 @@
 package com.asahi.shop;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+//import java.util.Map;
 
 public class GetStrWithoutDuplicate {
     	
 	public void getStrWithoutDuplicate(String name, int pos) {
 		
-		Map<Character, Integer> charMap = new HashMap<Character, Integer>();
-	
+	    Map<Character, Integer> charMap = new HashMap<Character, Integer>();
 	    char[] arr = name.toCharArray();
 	    StringBuilder newStr = new StringBuilder();
 
 	    for (char value: arr) {   	
-    	   value = Character.toLowerCase(value);
-           if (charMap.containsKey(value)) {
-               charMap.put(value, charMap.get(value) + 1);
-           } else {
-               charMap.put(value, 1);
-           }
+    	       value = Character.toLowerCase(value);
+               if (charMap.containsKey(value)) {
+                  charMap.put(value, charMap.get(value) + 1);
+               } else {
+                  charMap.put(value, 1);
+               }
 	    }
-	    
-	    
-	    System.out.println("Without duplicate string =========  : " + charMap);
-	    
+		    
+	    ArrayList list = new ArrayList();
 	    for(Map.Entry<Character, Integer> entry : charMap.entrySet()) {
 	    	Character key = entry.getKey();
 	    	Integer uniqueValue = entry.getValue();
 	    	if(uniqueValue == 1) {
-	           newStr.append(key);
+                   name = name.toLowerCase();
+                   int chIndex = name.indexOf(key);
+                   list.add(chIndex);
+	           
 	    	}
 	    }
-	    
+	    Collections.sort(list);
+            System.out.println(list);
+            for (int i = 0 ; i < list.size() ; i++) {
+                char gCh = name.charAt((int)list.get(i));
+                newStr.append(gCh);
+            }
+   
 	    String filterStr = newStr.toString();
-	    	    
-	    //System.out.println("Without duplicate string =========  : " + filterStr);
 	    
         try {
     	  char checkVal =  filterStr.charAt(pos);
@@ -49,9 +53,8 @@ public class GetStrWithoutDuplicate {
 	
 		String name = "MISSISSIPPICITY";
 		
-		
 		GetStrWithoutDuplicate strObj = new GetStrWithoutDuplicate();
 		
-		strObj.getStrWithoutDuplicate(name, 5);
+		strObj.getStrWithoutDuplicate(name, 0);
 	}
 }
