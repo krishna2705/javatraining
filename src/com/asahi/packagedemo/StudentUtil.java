@@ -5,7 +5,7 @@ public class StudentUtil {
     public static double[] calculateGPA(int[] studentIdList, char[][] studentsGrades) {
 	        // your code
 		 double[] grades = new double[studentIdList.length];
-		// for(int student : studentIdList) {
+		 for(int student : studentIdList) {
 		 	 int rownNum = 0;
 		 	
 			 for(char[] grade : studentsGrades) {
@@ -19,8 +19,8 @@ public class StudentUtil {
 				 gr = point  / grade.length;
 				 grades[rownNum++] = gr;
 			 }
-		 //}
-		 //System.out.println(grades[0]+" "+ grades[1]);
+		 }
+		 System.out.println(grades[0]+" "+ grades[1]);
 		 return grades;
 	    }
 	    
@@ -55,23 +55,27 @@ public class StudentUtil {
 	        // invoke calculateGPA
 	    	double[] grades = calculateGPA(studentIdList, studentsGrades);
 	    	double[] finalgrades;
-	    	//System.out.println(grades[0]);
+	    	
 	        // construct the result array and return it. You would need an extra for loop to compute the size of the resulting array
 	    	for(double g : grades) {
 	    		
 	    		if(lower <= g && g <= higher) {
-	    			//System.out.println(index);
 	    			filteredList[innerIndex] = studentIdList[index];
 	    			innerIndex++;
 	    		}
 	    		index++;
 	    	}
-	    	//System.out.println(filteredList.length+ " "+ filteredList[0]+ " "+ filteredList[1]);
+	    	System.out.println(filteredList.length+ " "+ filteredList[0]+ " "+ filteredList[1]);
 	    	return filteredList;
 	    }
 		
 		public static void main(String[] args) {
-			
+			double lower = 3.2;
+			double higher = 3.5;
+			int[] studentIdList = {1000, 1002};
+			char[][] studentsGrades = {{'A','A','A','B'},{'A','B','B'}};
+			calculateGPA(studentIdList, studentsGrades);
+			getStudentsByGPA(lower, higher, studentIdList, studentsGrades);
 		}
     
 }
