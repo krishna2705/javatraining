@@ -1,16 +1,9 @@
 package com.asahi.hms.insurance;
 
-public class GoldPlan extends HealthInsurancePlan implements  INInsuranceBrand{
+public class GoldPlan extends HealthInsurancePlan{
 		
-	public GoldPlan() {
-		this.coverage = 0.8;
-		this.planName = "gold";
-		this.discount = 40.0;
-	}
-
 	@Override
-	public double computeMonthlyPremium(HealthInsurancePlan insurancePlan, int age, boolean smoking) {
-		// TODO Auto-generated method stub
-		return 0;
+	public double computeMonthlyPremium(double salary, int age, boolean smoking) {
+		return 0.07 * salary + getOfferedBy().computeMonthlyPremium(this, age, smoking);
 	}
 }

@@ -1,16 +1,10 @@
 package com.asahi.hms.insurance;
 
-public class SilverPlan extends HealthInsurancePlan implements  INInsuranceBrand{
+public class SilverPlan extends HealthInsurancePlan{
 		
-	public SilverPlan() {
-		this.coverage = 0.7;
-		this.planName = "silver";
-		this.discount = 30.0;
-	}
-
 	@Override
-	public double computeMonthlyPremium(HealthInsurancePlan insurancePlan, int age, boolean smoking) {
-		// TODO Auto-generated method stub
-		return 0;
+	public double computeMonthlyPremium(double salary, int age, boolean smoking) {
+		return 0.06 * salary + getOfferedBy().computeMonthlyPremium(this, age, smoking);	
+	    
 	}
 }

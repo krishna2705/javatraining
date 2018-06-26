@@ -1,16 +1,10 @@
 package com.asahi.hms.insurance;
 
-public class BronzePlan extends HealthInsurancePlan implements  INInsuranceBrand {
+public class BronzePlan extends HealthInsurancePlan {
 
-	public BronzePlan() {
-		this.coverage = 0.6;
-		this.planName = "bronze";
-		this.discount = 25.0;
-	}
-	
-	public double computeMonthlyPremium(HealthInsurancePlan insurancePlan, int age, boolean smoking) {
-		// TODO Auto-generated method stub
-		return 0;
+	@Override
+	public double computeMonthlyPremium(double salary, int age, boolean smoking) {
+		return 0.05 * salary + getOfferedBy().computeMonthlyPremium(this, age, smoking);
 	}
 	
 }

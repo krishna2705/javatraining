@@ -1,6 +1,6 @@
 package com.asahi.hms.insurance;
 
-public class HealthInsurancePlan {
+public abstract class HealthInsurancePlan {
     // Code for 'coverage' field goes here
     public double coverage;
     
@@ -10,6 +10,8 @@ public class HealthInsurancePlan {
     
 	// Don't worry about the below code and also the InsuranceBrand class
 	private InsuranceBrand offeredBy;
+	
+	public abstract double computeMonthlyPremium(double salary, int age, boolean smoking);
 
 	public InsuranceBrand getOfferedBy() {
 		return offeredBy;
