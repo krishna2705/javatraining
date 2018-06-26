@@ -7,8 +7,7 @@ public class Billing {
         
         HealthInsurancePlan patientInsurancePlan = patient.getInsurancePlan();
 
-        // your logic
-                
+        // your logic 
         //get insurance plan name
         String planName = patientInsurancePlan.getPlanName();
         
