@@ -11,7 +11,9 @@ public class HMSBillingMain {
 				
 		insurancePlan.setOfferedBy(insuranceBrand);
 		staff.setInsurancePlan(insurancePlan);
-		insurancePlan.computeMonthlyPremium(5000, 56, true);
+		double premium = insurancePlan.computeMonthlyPremium(5000, 56, true);
+		
+		System.out.println("Get the premium calculation >> " + premium);
 	}
 
 }
