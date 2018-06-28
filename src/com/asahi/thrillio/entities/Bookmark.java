@@ -1,10 +1,15 @@
 package com.asahi.thrillio.entities;
 
-public class Bookmark {
+import com.asahi.thrillio.constants.KidFriendlyStatus;
+
+public abstract class Bookmark {
 	
 	private long id;
 	private String title;
 	private String profileUrl;
+	private String kidFriendlyStatus = KidFriendlyStatus.UNKNOWN;  // unknown, approved, rejected
+	private User kidFriendlyMarkedBy;
+	private User sharedBy;
 	
 	public long getId() {
 		return id;
@@ -28,5 +33,38 @@ public class Bookmark {
 	public String toString() {
 		return "Bookmark [id=" + id + ", title=" + title + ", profileUrl=" + profileUrl + "]";
 	}
-
+	
+	public abstract boolean isKidFriendlyEligible();
+	
+	public String getKidFriendlyStatus() {
+		return kidFriendlyStatus;
+	}
+	public void setKidFriendlyStatus(String kidFriendlyStatus) {
+		this.kidFriendlyStatus = kidFriendlyStatus;
+	}
+	/**
+	 * @return the kidFriendlyMarkedBy
+	 */
+	public User getKidFriendlyMarkedBy() {
+		return kidFriendlyMarkedBy;
+	}
+	/**
+	 * @param kidFriendlyMarkedBy the kidFriendlyMarkedBy to set
+	 */
+	public void setKidFriendlyMarkedBy(User kidFriendlyMarkedBy) {
+		this.kidFriendlyMarkedBy = kidFriendlyMarkedBy;
+	}
+	/**
+	 * @return the sharedBy
+	 */
+	public User getSharedBy() {
+		return sharedBy;
+	}
+	/**
+	 * @param sharedBy the sharedBy to set
+	 */
+	public void setSharedBy(User sharedBy) {
+		this.sharedBy = sharedBy;
+	}
+	
 }

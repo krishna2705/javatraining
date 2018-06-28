@@ -57,6 +57,7 @@ public class DataStore {
 	  bookmarks[1][2] = BookmarkManager.getInstance().createMovie(3002, "Citizen Kane", "", 1943, new String[] { "Orson Welles" ,"Joseph Cotten" }, new String[] { "Orson Welles asahi" }, BookGenre.CHILDREN , 7.0  );
 	  bookmarks[1][3] = BookmarkManager.getInstance().createMovie(3003, "Citizen Kane", "", 1944, new String[] { "Orson Welles" ,"Joseph Cotten" }, new String[] { "Orson Welles welcome" }, BookGenre.RELIGION , 6.0  );
 	  bookmarks[1][4] = BookmarkManager.getInstance().createMovie(3004, "Citizen Kane", "", 1945, new String[] { "Orson Welles" ,"Joseph Cotten" }, new String[] { "Orson Welles world" }, BookGenre.MYSTERY , 9.0  );
+	  
 	  bookmarks[2][0] = BookmarkManager.getInstance().createMovie(3005, "Citizen Kane", "", 1946, new String[] { "Orson Welles" ,"Joseph Cotten" }, new String[] { "Orson Welles" }, BookGenre.PHILOSOPHY , 8.0  );
 	  bookmarks[2][1] = BookmarkManager.getInstance().createMovie(3006, "Citizen Kane", "", 1947, new String[] { "Orson Welles" ,"Joseph Cotten" }, new String[] { "Orson Welles test" }, BookGenre.BIOGRAPHY , 5.0  );
 	  bookmarks[2][2] = BookmarkManager.getInstance().createMovie(3007, "Citizen Kane", "", 1948, new String[] { "Orson Welles" ,"Joseph Cotten" }, new String[] { "Orson Welles asahi" }, BookGenre.CHILDREN , 7.0  );
