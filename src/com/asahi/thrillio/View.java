@@ -9,7 +9,7 @@ import com.asahi.thrillio.partner.Shareable;
 
 public class View {
     public static void browse(User user, Bookmark[][] bookmarks) {
-    	 System.out.println("\n" + user.getEmail() + " is bookmarking ");
+    	 System.out.println("\n" + user.getEmail() + " is bookmarking \n");
     	 
     	 int bookMarkCount = 0;
     	 for(Bookmark[] bookmarkList : bookmarks) {
