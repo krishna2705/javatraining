@@ -6,4 +6,8 @@ public class SilverPlan extends HealthInsurancePlan {
 		setCoverage(0.7);
 		setDiscount(30.0);
 	}
+	
+	public double getDiscount() {
+		return super.getDiscount();
+	}
 }

@@ -3,8 +3,11 @@ package com.asahi.hms.billing;
 public class PlatinumPlan extends HealthInsurancePlan {
 		
 	public PlatinumPlan() {
-		this.coverage = 0.9;
-		this.planName = "platinum";
-		this.discount = 50.0;
+		setCoverage(0.9);
+		setDiscount(50.0);
+	}
+	
+	public double getDiscount() {
+		return super.getDiscount();
 	}
 }

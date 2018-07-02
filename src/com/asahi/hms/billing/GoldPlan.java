@@ -6,4 +6,8 @@ public class GoldPlan extends HealthInsurancePlan{
 		setCoverage(0.8);
 		setDiscount(40.0);
 	}
+	
+	public double getDiscount() {
+		return super.getDiscount();
+	}
 }

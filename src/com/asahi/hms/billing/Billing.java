@@ -8,10 +8,6 @@ public class Billing {
         HealthInsurancePlan patientInsurancePlan = patient.getInsurancePlan();
 
         // your logic
-                
-        //get insurance plan name
-        String planName = patientInsurancePlan.getPlanName();
-        
         double coverage = patientInsurancePlan.getCoverage();
         
         double discount = patientInsurancePlan.getDiscount();
@@ -19,9 +15,9 @@ public class Billing {
         double insuranceCompanyWouldPay = (amount * coverage);
         payments[0] = insuranceCompanyWouldPay;
         payments[1] = (amount - insuranceCompanyWouldPay) - discount;
-        System.out.println("Insurance company would Pay >> " + insuranceCompanyWouldPay);
+        //System.out.println("Insurance company would Pay >> " + insuranceCompanyWouldPay);
         
-        System.out.println("Remaining Amount Pay by patient >> " + ((amount - insuranceCompanyWouldPay) - discount));
+        //System.out.println("Remaining Amount Pay by patient >> " + ((amount - insuranceCompanyWouldPay) - discount));
        
         return payments;
     }

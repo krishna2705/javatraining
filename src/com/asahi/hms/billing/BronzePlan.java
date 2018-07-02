@@ -7,4 +7,7 @@ public class BronzePlan extends HealthInsurancePlan{
 		setDiscount(25.0);
 	}
 	
+	public double getDiscount() {
+		return super.getDiscount();
+	}
 }
