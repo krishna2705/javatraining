@@ -1,6 +1,7 @@
 package com.asahi.zoo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ZooMain {
 
@@ -12,12 +13,11 @@ public class ZooMain {
 		
 		setAnimalsAction.setActions(domasticAnimals);
 		
-		ArrayList actions = null; 
+		String[] actions = {"run", "jump" };  
+
+	    ArrayList<String> actionsList = new ArrayList(Arrays.asList(actions)); 
 		
-		actions.add(new String("JUMP"));
-		actions.add(new String("RUN"));
-		
-		setAnimalsAction.animalsAction(actions);
+		setAnimalsAction.animalsAction(actionsList);
 		
 	}
 
