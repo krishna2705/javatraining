@@ -4,10 +4,9 @@ public class PlatinumPlan extends HealthInsurancePlan {
 		
 	public PlatinumPlan() {
 		setCoverage(0.9);
-		setDiscount(50.0);
 	}
 	
-	public double getDiscount() {
-		return super.getDiscount();
+	public double computeMonthlyPremium(double salary) {
+		return 0.08 * salary;
 	}
 }

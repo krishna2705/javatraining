@@ -2,12 +2,11 @@ package com.asahi.hms.billing;
 
 public class BronzePlan extends HealthInsurancePlan{
 
-	public BronzePlan() {
+	public BronzePlan () {
 		setCoverage(0.6);
-		setDiscount(25.0);
 	}
 	
-	public double getDiscount() {
-		return super.getDiscount();
+	public double computeMonthlyPremium(double salary) {
+		return 0.05 * salary;
 	}
 }

@@ -2,12 +2,11 @@ package com.asahi.hms.billing;
 
 public class GoldPlan extends HealthInsurancePlan{
 		
-	public GoldPlan() {
+	public GoldPlan () {
 		setCoverage(0.8);
-		setDiscount(40.0);
 	}
 	
-	public double getDiscount() {
-		return super.getDiscount();
+	public double computeMonthlyPremium(double salary) {
+		return 0.07 * salary;
 	}
 }

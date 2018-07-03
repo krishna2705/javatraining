@@ -8,17 +8,26 @@ public class Billing {
         HealthInsurancePlan patientInsurancePlan = patient.getInsurancePlan();
 
         // your logic
-        double coverage = patientInsurancePlan.getCoverage();
-        
-        double discount = patientInsurancePlan.getDiscount();
-        
-        double insuranceCompanyWouldPay = (amount * coverage);
-        payments[0] = insuranceCompanyWouldPay;
-        payments[1] = (amount - insuranceCompanyWouldPay) - discount;
-        //System.out.println("Insurance company would Pay >> " + insuranceCompanyWouldPay);
-        
-        //System.out.println("Remaining Amount Pay by patient >> " + ((amount - insuranceCompanyWouldPay) - discount));
-       
+        double paymentByInsurance = 0.0;
+
+		if (patientInsurancePlan != null) {
+			paymentByInsurance = amount * patientInsurancePlan.getCoverage();
+			payments[0] = paymentByInsurance;
+			
+			if (patientInsurancePlan instanceof PlatinumPlan) {
+				payments[1] = amount - paymentByInsurance - 50;
+			} else if (patientInsurancePlan instanceof GoldPlan) {
+				payments[1] = amount - paymentByInsurance - 40;
+			} else if (patientInsurancePlan instanceof SilverPlan) {
+				payments[1] = amount - paymentByInsurance - 30;
+			} else {
+				payments[1] = amount - paymentByInsurance - 25;
+			}
+			
+		} else {
+			payments[1] = amount - 20;
+		}
+		
         return payments;
     }
 
