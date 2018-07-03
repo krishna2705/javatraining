@@ -1,5 +1,5 @@
 package com.asahi.zoo;
 
-public class Fish {
+public class Fish extends SeaAnimals{
 
 }

@@ -1,5 +1,10 @@
 package com.asahi.zoo;
 
-public class Cow {
+import java.util.ArrayList;
 
+public class Cow extends DomasticAnimals{
+	@Override
+	public ArrayList animalsAction(ArrayList actions){
+		return getActions().animalsAction(this, actions);
+	}
 }

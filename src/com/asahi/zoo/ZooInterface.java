@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public interface ZooInterface {
 	
-	void setActions(AnimalsActions ac);
-	
-	ArrayList getActions();
+	ArrayList animalsAction(DomasticAnimals domasticAnimals, ArrayList actions);
 	
 }

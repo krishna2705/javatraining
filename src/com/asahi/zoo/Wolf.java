@@ -1,5 +1,5 @@
 package com.asahi.zoo;
 
-public class Wolf {
+public class Wolf extends WildAnimals{
 
 }

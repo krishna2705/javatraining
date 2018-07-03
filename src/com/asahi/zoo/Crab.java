@@ -1,5 +1,7 @@
 package com.asahi.zoo;
 
-public class Crab {
+import java.util.ArrayList;
+
+public class Crab extends SeaAnimals{
 
 }
