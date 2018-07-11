@@ -40,6 +40,18 @@ public class Zoo {
 			}
 			
 		}
+		
+		Fish df = new DolphinFish("Dolphin");
+		Fish sf = new StarFish("StarFish");
+		
+		df.swim();
+		sf.swim();
+		
+		df.breath();
+		
+		df.jump();
+		sf.jump();
+		
 	}
 
 }

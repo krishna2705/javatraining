@@ -16,4 +16,6 @@ public abstract class Animal {
 	public boolean canFly() { return false; }
 
 	public abstract void eat();
+	
+	public boolean isDomestic() { return false;}
 }
